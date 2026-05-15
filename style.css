@@ -1,5 +1,5 @@
 /* =========================================
-   RESET & BODY
+   RESET
 ========================================= */
 
 *{
@@ -8,23 +8,28 @@
     box-sizing: border-box;
 }
 
-body{
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    text-align: center;
+
+    background-color: #c2c5d8;
+
+    padding: 20px 0;   /* TOP & BOTTOM GAP */
+
     min-height: 100vh;
+
+    overflow-x: hidden;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    text-align: center;
-
     font-family: Arial, Helvetica, sans-serif;
-
-    background: linear-gradient(135deg, #dbe4ff, #c2c5d8);
-
-    overflow-x: hidden;
-
-    padding: 1rem;
 }
 
 /* =========================================
@@ -32,76 +37,92 @@ body{
 ========================================= */
 
 h1{
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    margin-bottom: 0.4rem;
-    color: #222;
+
+    font-size: clamp(2rem,5vw,3.5rem);
+
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+    color: #111;
 
     letter-spacing: 1px;
 
-    animation: fadeDown 0.7s ease;
+    animation: fadeDown 0.6s ease;
 }
 
 h2{
-    font-size: clamp(1rem, 2.5vw, 1.8rem);
-    color: #444;
 
-    margin-bottom: 1.3rem;
+    font-size: clamp(1.2rem,3vw,2rem);
 
-    animation: fadeUp 0.7s ease;
+    margin-bottom: 1rem;
+
+    color: #333;
+
+    animation: fadeUp 0.6s ease;
 }
 
 /* =========================================
    START BUTTON
 ========================================= */
 
-#start-btn{
+#start-btn {
 
-    padding: 12px 28px;
+    padding: 12px 25px;
 
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 18px;
+
+    border-radius: 10px;
+
+    background-color: #333;
+
+    color: #fcfbfb;
 
     border: none;
-    border-radius: 12px;
-
-    background: #222;
-    color: white;
 
     cursor: pointer;
 
-    margin-bottom: 1.8rem;
+    margin-bottom: 20px;
 
     transition: all 0.3s ease;
 
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-#start-btn:hover{
+#start-btn:hover {
 
-    transform: translateY(-3px) scale(1.03);
+    background-color: #555;
 
-    background: #444;
+    transform: translateY(-3px);
 
     box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 #start-btn:active{
-    transform: scale(0.97);
+    transform: scale(0.96);
 }
 
 /* =========================================
-   GAME CONTAINER
+   BUTTON CONTAINER
 ========================================= */
 
-.btn-container{
+.btn-container {
 
     display: flex;
+
     flex-direction: column;
+
+    align-items: center;
 
     gap: 1rem;
 
-    animation: zoomIn 0.8s ease;
+    margin-top: 1rem;
+
+    animation: zoomIn 0.7s ease;
 }
+
+/* =========================================
+   ROWS
+========================================= */
 
 .line-one,
 .line-two{
@@ -109,7 +130,6 @@ h2{
     display: flex;
 
     justify-content: center;
-    align-items: center;
 
     gap: 1rem;
 }
@@ -118,14 +138,15 @@ h2{
    GAME BUTTONS
 ========================================= */
 
-.btn{
+.btn {
 
-    height: clamp(120px, 18vw, 190px);
-    width: clamp(120px, 18vw, 190px);
+    height: clamp(110px, 18vw, 180px);
 
-    border-radius: 24px;
+    width: clamp(110px, 18vw, 180px);
 
-    border: 5px solid #111;
+    border-radius: 20%;
+
+    border: 5px solid black;
 
     cursor: pointer;
 
@@ -138,41 +159,43 @@ h2{
 
     transform: scale(1.05);
 
-    box-shadow: 0 12px 25px rgba(0,0,0,0.28);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.28);
 }
 
 /* =========================================
-   COLORS
+   COLORS (UNCHANGED)
 ========================================= */
 
-.yellow{
-    background: #f4b860;
+.yellow {
+    background-color: #ee9a4b;
 }
 
-.red{
-    background: #f26d93;
+.red {
+    background-color: #e76089;
 }
 
-.green{
-    background: #7f9df5;
+.green {
+    background-color: #839eec;
 }
 
-.purple{
-    background: #63c7df;
+.purple {
+    background-color: #60b3cc;
 }
 
 /* =========================================
    FLASH EFFECTS
 ========================================= */
 
-.flash{
-    background: white !important;
+.flash {
+
+    background-color: white;
 
     transform: scale(1.08);
 }
 
-.userflash{
-    background: #45ff7a !important;
+.userflash {
+
+    background-color: green;
 
     transform: scale(1.08);
 }
@@ -221,42 +244,17 @@ h2{
 }
 
 /* =========================================
-   LAPTOPS
-========================================= */
-
-@media screen and (max-width: 1024px){
-
-    .btn{
-
-        height: clamp(120px, 20vw, 170px);
-        width: clamp(120px, 20vw, 170px);
-    }
-}
-
-/* =========================================
    TABLETS
 ========================================= */
 
 @media screen and (max-width: 768px){
 
     body{
-        padding: 1.2rem;
+        padding: 20px 0;
     }
 
-    h1{
-        font-size: 2.6rem;
-    }
-
-    h2{
-        font-size: 1.4rem;
-    }
-
-    .btn{
-
-        height: 145px;
-        width: 145px;
-
-        border-width: 4px;
+    .btn-container{
+        gap: 0.8rem;
     }
 
     .line-one,
@@ -264,41 +262,26 @@ h2{
         gap: 0.8rem;
     }
 
+    .btn{
+        height: clamp(120px, 24vw, 160px);
+        width: clamp(120px, 24vw, 160px);
+
+        border-width: 4px;
+    }
+
     #start-btn{
-
-        padding: 11px 24px;
-
-        font-size: 0.95rem;
+        padding: 10px 22px;
     }
 }
 
 /* =========================================
-   MOBILE
+   MOBILE DEVICES
 ========================================= */
 
 @media screen and (max-width: 480px){
 
     body{
-
-        justify-content: center;
-
-        padding: 1rem 0.6rem;
-    }
-
-    h1{
-
-        font-size: 2rem;
-
-        line-height: 1.2;
-    }
-
-    h2{
-
-        font-size: 1.1rem;
-
-        margin-bottom: 1rem;
-
-        line-height: 1.5;
+        padding: 20px 0;
     }
 
     .btn-container{
@@ -311,19 +294,14 @@ h2{
     }
 
     .btn{
+        height: 130px;
+        width: 130px;
 
-        height: 125px;
-        width: 125px;
-
-        border-radius: 20px;
+        border-width: 4px;
     }
 
     #start-btn{
-
-        width: 100%;
-        max-width: 230px;
-
-        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 }
 
@@ -334,25 +312,12 @@ h2{
 @media screen and (max-width: 360px){
 
     .btn{
-
-        height: 100px;
-        width: 100px;
-
-        border-width: 3px;
-    }
-
-    h1{
-        font-size: 1.6rem;
-    }
-
-    h2{
-        font-size: 0.95rem;
+        height: 105px;
+        width: 105px;
     }
 
     #start-btn{
-
-        padding: 10px 18px;
-
-        font-size: 0.85rem;
+        width: 100%;
+        max-width: 220px;
     }
 }
