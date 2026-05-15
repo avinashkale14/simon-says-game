@@ -7,6 +7,7 @@
     border: none;
     cursor: pointer;
     margin-bottom: 20px;
+    transition: 0.3s ease;
 }
 
 #start-btn:hover {
@@ -16,33 +17,85 @@
 body {
     text-align: center;
     background-color: #c2c5d8;
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
 }
 
-.btn {
-    height: 200px;
-    width: 200px;
-    border-radius: 20%;
-    border: 5px solid black;
-    margin: 0.5rem;
+h1{
+    font-size: clamp(2rem,5vw,3.5rem);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
+
+h2{
+    font-size: clamp(1.2rem,3vw,2rem);
+    margin-bottom: 1rem;
+}
+
+/* BUTTON CONTAINER */
 
 .btn-container {
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
 }
 
+/* ROWS */
+
+.line-one,
+.line-two{
+
+    display: flex;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+/* GAME BUTTONS */
+
+.btn {
+
+    height: clamp(110px, 18vw, 180px);
+    width: clamp(110px, 18vw, 180px);
+
+    border-radius: 20%;
+    border: 5px solid black;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+/* COLORS */
+
 .yellow {
-    background-color: #f99b45;
+    background-color: #ee9a4b;
 }
+
 .red {
-    background-color: #d95980;
+    background-color: #e76089;
 }
+
 .green {
-    background-color: #819ff9;
+    background-color: #839eec;
 }
+
 .purple {
-    background-color: #63aac0;
+    background-color: #60b3cc;
 }
+
+/* FLASH EFFECTS */
 
 .flash {
     background-color: white;
@@ -50,4 +103,114 @@ body {
 
 .userflash {
     background-color: green;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media screen and (max-width: 768px){
+
+    body{
+        padding: 1rem;
+    }
+
+    h1{
+        font-size: 2.7rem;
+    }
+
+    h2{
+        font-size: 1.7rem;
+    }
+
+    .btn-container{
+        gap: 0.8rem;
+    }
+
+    .line-one,
+    .line-two{
+        gap: 0.8rem;
+    }
+
+    .btn{
+        height: clamp(120px, 24vw, 160px);
+        width: clamp(120px, 24vw, 160px);
+
+        border-width: 4px;
+    }
+
+    #start-btn{
+        font-size: 16px;
+        padding: 10px 22px;
+    }
+}
+
+
+/* =========================================
+   MOBILE DEVICES
+========================================= */
+
+@media screen and (max-width: 480px){
+
+    body{
+        padding: 1rem 0.5rem;
+    }
+
+    h1{
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    h2{
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .btn-container{
+        gap: 0.7rem;
+    }
+
+    .line-one,
+    .line-two{
+        gap: 0.7rem;
+    }
+
+    .btn{
+        height: 130px;
+        width: 130px;
+
+        border-width: 4px;
+    }
+
+    #start-btn{
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILES
+========================================= */
+
+@media screen and (max-width: 360px){
+
+    .btn{
+        height: 105px;
+        width: 105px;
+    }
+
+    h1{
+        font-size: 1.7rem;
+    }
+
+    h2{
+        font-size: 1rem;
+    }
+
+    #start-btn{
+        width: 100%;
+        max-width: 220px;
+    }
 }
